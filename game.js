@@ -19,27 +19,37 @@ function randomColor() {
 	return `rgb(${randomNumber(256)}, ${randomNumber(256)}, ${randomNumber(256)})`;
 }
 
-function game() {
+function game(color) {
+	let boxes = Array.from(document.querySelectorAll('.box'));
+	boxes.forEach(box => {
+		box.addEventListener('mouseover', function(e) {
+			e.target.style.backgroundColor = color;
+		})
+	})
+}
+
+function restart() {
 	let boxes = Array.from(document.querySelectorAll('.box'));
 	boxes.forEach(box => {
 		box.style.backgroundColor = 'white';
-		box.addEventListener('mouseover', function(e) {
-			e.target.style.backgroundColor = 'black';
-		})
 	})
 }
 
 //Start
 
-createGrid(16);
-game();
+createGrid(32);
+game('black');
 
-const reset = document.querySelector('.reset');
-const classic = document.querySelector('.classic');
+const newGrid = document.querySelector('.newGrid');
+const clean = document.querySelector('.clean');
 const rainbow = document.querySelector('.rainbow');
-const extreme = document.querySelector('.extreme'); 
+const black = document.querySelector('.black');
+const white = document.querySelector('.white');
+const red = document.querySelector('.red');
+const green = document.querySelector('.green');
+const blue = document.querySelector('.blue');
 
-reset.addEventListener('click', function() {
+newGrid.addEventListener('click', function() {
 	let gridSize = prompt('What size do you prefer?');
 	if (!gridSize) {
 		return;
@@ -47,22 +57,43 @@ reset.addEventListener('click', function() {
 
 	container.innerHTML = '';
 	createGrid(gridSize);
-	game();
-})
-
-classic.addEventListener('click', function() {
-	game();
+	game('black');
 })
 
 rainbow.addEventListener('click', function() {
 	let boxes = Array.from(document.querySelectorAll('.box'));
 	boxes.forEach(box => {
-		box.style.backgroundColor = 'white';
+//		box.style.backgroundColor = 'white';
 		box.addEventListener('mouseover', function(e) {
 			e.target.style.backgroundColor = randomColor();
 		})
 	})
 })
+
+clean.addEventListener('click', restart);
+
+black.addEventListener('click', function() {
+	game('black');
+})
+
+white.addEventListener('click', function() {
+	game('white');
+})
+
+red.addEventListener('click', function() {
+	game('#f51d41');
+})
+
+green.addEventListener('click', function() {
+	game('#1df553');
+})
+
+blue.addEventListener('click', function() {
+	game('#1d69f5');
+})
+
+
+
 
 
 

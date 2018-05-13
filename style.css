@@ -12,19 +12,34 @@ body {
 	padding: 0;
 	width: 500px;
 	height: 500px;
-	border: 1px solid black;
+	border: 1px solid #aaa;
 	display: flex;
 	flex-wrap: wrap;
-	margin: 20px auto 40px;
+	margin: 20px auto 10px;
+}
+
+.buttons {
+	width: 500px;
+	margin: auto;
+}
+
+.buttons > * {
+	display: flex;
+	align-items: stretch;
+	justify-content: space-between;
+	margin-bottom: 10px;
+	height: 50px;
 }
 
 button {
-	width: 150px;
 	background-color: white;
-	padding: 20px;
-	border: 1px solid black;
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-	margin: 10px;
+	width: calc(20% - 5px);
+	border: 1px solid #aaa;
+}
+
+.mainButtons > button {
+	width: calc((500px / 3) - 5px);
 }
 
 button:hover {
@@ -33,5 +48,28 @@ button:hover {
 }
 
 button:active {
-	transform: scale(1.1);
+	transform: scale(1.05);
 }
+
+.black {
+	background-color: black;
+}
+
+.red {
+	background-color: #f51d41;
+}
+
+.green {
+	background-color: #1df553;
+}
+
+.blue {
+	background-color: #1d69f5;
+}
+
+
+
+
+
+
+
