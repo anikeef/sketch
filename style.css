@@ -5,41 +5,51 @@
 body {
 	text-align: center;
 	margin: auto;
+	font-size: 14px;
+	background-color: rgb(243, 243, 243);
+	font-family: "Raleway";
 }
 
 .container {
+	background-color: white;
 	box-sizing: content-box;
 	padding: 0;
 	width: 500px;
 	height: 500px;
-	border: 1px solid #aaa;
+	//border: 1px solid #aaa;
 	display: flex;
 	flex-wrap: wrap;
 	margin: 20px auto 10px;
+	box-shadow: 0 0 4px rgba(0, 0, 0, .25);
 }
 
 .buttons {
 	width: 500px;
 	margin: auto;
+	//border: 1px solid #aaa;
+	box-shadow: 0 0 4px rgba(0, 0, 0, .25);
 }
 
 .buttons > * {
 	display: flex;
 	align-items: stretch;
 	justify-content: space-between;
-	margin-bottom: 10px;
-	height: 50px;
+	//margin-bottom: 10px;
+	height: 60px;
 }
 
 button {
 	background-color: white;
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-	width: calc(20% - 5px);
-	border: 1px solid #aaa;
+	width: calc(20%);
+	border: none;
 }
 
-.mainButtons > button {
-	width: calc((500px / 3) - 5px);
+.main-buttons {
+	border-top: 1px solid rgb(243, 243, 243);
+}
+
+.main-buttons > button {
+	width: calc((500px / 3));
 }
 
 button:hover {
@@ -47,29 +57,22 @@ button:hover {
 	border: 1px solid #0fa3ff;
 }
 
-button:active {
+/* button:active {
 	transform: scale(1.05);
-}
+} */
 
 .black {
 	background-color: black;
 }
 
 .red {
-	background-color: #f51d41;
+	background-color: #FF5858;
 }
 
 .green {
-	background-color: #1df553;
+	background-color: #1AFF75;
 }
 
 .blue {
-	background-color: #1d69f5;
+	background-color: #00C2FF;
 }
-
-
-
-
-
-
-

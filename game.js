@@ -23,6 +23,10 @@ function game(color) {
 	let boxes = Array.from(document.querySelectorAll('.box'));
 	boxes.forEach(box => {
 		box.addEventListener('mouseover', function(e) {
+			if (e.shiftKey) {
+				e.target.style.backgroundColor = 'white';
+				return;
+			}
 			e.target.style.backgroundColor = color;
 		})
 	})
@@ -81,26 +85,13 @@ white.addEventListener('click', function() {
 })
 
 red.addEventListener('click', function() {
-	game('#f51d41');
+	game('#FF5858');
 })
 
 green.addEventListener('click', function() {
-	game('#1df553');
+	game('#1AFF75');
 })
 
 blue.addEventListener('click', function() {
-	game('#1d69f5');
+	game('#00C2FF');
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
